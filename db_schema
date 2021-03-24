@@ -1,0 +1,125 @@
+CREATE TABLE restrictions(
+  "BayID" Integer,
+  "DeviceID" Integer,
+  "Description1" TEXT,
+  "Description2" TEXT,
+  "Description3" TEXT,
+  "Description4" TEXT,
+  "Description5" TEXT,
+  "Description6" TEXT,
+  "DisabilityExt1" Integer,
+  "DisabilityExt2" Integer,
+  "DisabilityExt3" Integer,
+  "DisabilityExt4" Integer,
+  "DisabilityExt5" Integer,
+  "DisabilityExt6" Integer,
+  "Duration1" Integer,
+  "Duration2" Integer,
+  "Duration3" Integer,
+  "Duration4" Integer,
+  "Duration5" Integer,
+  "Duration6" Integer,
+  "EffectiveOnPH1" Integer,
+  "EffectiveOnPH2" Integer,
+  "EffectiveOnPH3" Integer,
+  "EffectiveOnPH4" Integer,
+  "EffectiveOnPH5" Integer,
+  "EffectiveOnPH6" Integer,
+  "EndTime1" Integer,
+  "EndTime2" Integer,
+  "EndTime3" Integer,
+  "EndTime4" Integer,
+  "EndTime5" Integer,
+  "EndTime6" Integer,
+  "Exemption1" TEXT,
+  "Exemption2" TEXT,
+  "Exemption3" TEXT,
+  "Exemption4" TEXT,
+  "Exemption5" TEXT,
+  "Exemption6" TEXT,
+  "FromDay1" Integer,
+  "FromDay2" Integer,
+  "FromDay3" Integer,
+  "FromDay4" Integer,
+  "FromDay5" Integer,
+  "FromDay6" Integer,
+  "StartTime1" Integer,
+  "StartTime2" Integer,
+  "StartTime3" Integer,
+  "StartTime4" Integer,
+  "StartTime5" Integer,
+  "StartTime6" Integer,
+  "ToDay1" Integer,
+  "ToDay2" Integer,
+  "ToDay3" Integer,
+  "ToDay4" Integer,
+  "ToDay5" Integer,
+  "ToDay6" Integer,
+  "TypeDesc1" TEXT,
+  "TypeDesc2" TEXT,
+  "TypeDesc3" TEXT,
+  "TypeDesc4" TEXT,
+  "TypeDesc5" TEXT,
+  "TypeDesc6" TEXT,
+  FOREIGN KEY (BayID) REFERENCES sensors (bay_id),
+  FOREIGN KEY (DeviceID) REFERENCES events (DeviceId)
+);
+
+CREATE TABLE sensors(
+  "bay_id" Integer PRIMARY KEY,
+  "st_marker_id" TEXT,
+  "status" TEXT,
+  "location" TEXT,
+  "lat" real,
+  "lon" real
+);
+
+CREATE TABLE locations(
+  "marker" TEXT PRIMARY KEY,
+  "lat" real,
+  "lon" real
+);
+
+CREATE TABLE durations(
+  "sign" TEXT PRIMARY KEY,
+  "duration" INTEGER
+);
+
+CREATE TABLE roads(
+  "GISID" Integer,
+  "SegID" TEXT,
+  "the_geom" TEXT,
+  "StreetID" TEXT,
+  "StatusID" TEXT,
+  "SegPart" TEXT,
+  "StrType" TEXT,
+  "DTUpdate" TEXT,
+  "PolyArea" TEXT,
+  "SegDescr" TEXT
+);
+
+CREATE TABLE devices(
+  "DeviceId" Integer,
+  "Area" TEXT,
+  "lat" real,
+  "lon" real
+);
+
+
+CREATE TABLE events(
+  "DeviceId" Integer,
+  "ArrivalTime" Integer,
+  "DepartureTime" Integer,
+  "DurationSeconds" Integer,
+  "StreetMarker" TEXT,
+  "Sign" TEXT,
+  "Area" TEXT,
+  "StreetId" TEXT,
+  "StreetName" TEXT,
+  "BetweenStreet1" TEXT,
+  "BetweenStreet2" TEXT,
+  "Side Of Street" TEXT,
+  "In Violation" TEXT,
+  "Vehicle Present" TEXT
+);
+
