@@ -10,6 +10,9 @@ import urllib.request
 
 if __name__ == '__main__':
     print("download data files from Melbourne")
+    if not os.path.exists("data/"):
+        os.mkdir("data/")
+
     if not os.path.exists('data/bay_locations.csv'):
         urllib.request.urlretrieve('https://data.melbourne.vic.gov.au/api/views/wuf8-susg/rows.csv?accessType=DOWNLOAD',
                                    'data/bay_locations.csv')
