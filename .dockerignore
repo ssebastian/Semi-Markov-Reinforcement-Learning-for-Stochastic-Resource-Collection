@@ -1,0 +1,7 @@
+data/
+logs/
+cache/
+*.pyc
+dataset.db
+venv/
+.idea/

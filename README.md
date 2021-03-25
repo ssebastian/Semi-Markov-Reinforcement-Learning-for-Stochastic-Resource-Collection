@@ -9,8 +9,8 @@ We show that the task of collecting stochastic, spatially distributed resources 
 
 [Long Video](https://www.ijcai.org/proceedings/2020/video/26129)
 
-## Install
-Install requirements:
+## Install (main system)
+Install requirements (consider creating a virtual environment):
 ```bash
 pip install -r requirements.txt
 ```
@@ -30,6 +30,19 @@ python create_db.py
 Run:
 ```bash
 python -O main.py
+```
+
+## Install and run with docker (no GPU)
+Create the docker container:
+```bash
+cd /path/to/project
+docker build -f dockerfile -t toprl .
+```
+
+Run the project with:
+```bash
+cd /path/to/project
+docker run --rm -it -v `pwd`:/mnt toprl
 ```
 
 ## Visualize Results
