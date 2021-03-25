@@ -18,6 +18,7 @@ You might also need to install following libraries (Ubuntu):
 ```bash
 sudo apt-get install libspatialindex-dev libgdal-dev ffmpeg
 ```
+This is tested on Ubuntu 20.04.2 LTS with Python 3.8.5.
 
 
 ## Create Database
